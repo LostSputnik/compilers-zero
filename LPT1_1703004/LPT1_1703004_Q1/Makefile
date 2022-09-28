@@ -1,0 +1,8 @@
+all:
+	gcc -o LPT1_1703004_Q1 LPT1_1703004_Q1.c
+	gcc -E LPT1_1703004_Q1.c > LPT1_1703004_Q1.i 
+	gcc -S -masm=intel LPT1_1703004_Q1.i
+	as -o LPT1_1703004_Q1.o LPT1_1703004_Q1.s
+	objdump -M intel -d LPT1_1703004_Q1.o > LPT1_1703004_Q1.dump
+	gcc -c -o LPT1_1703004_Q1.o LPT1_1703004_Q1.c
+	objdump -M intel -d LPT1_1703004_Q1.o > LPT1_1703004_Q12.dump
